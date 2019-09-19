@@ -1,0 +1,35 @@
+<% include partials/header%>
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h4 class="text-center">
+			Welcome to the post section
+			</h4>
+			<a class="mx-auto btn btn-success" href="/posts/new">Add a new Post</a>
+		</div>
+	</header>
+
+    <div class="row text-center" >
+		<% posts.forEach((post) => { %>
+			<div class="col-md-4">
+				<div class="img-thumbnail ">
+				<img class="img-fluid img-thumbnail" src="<%= post.image %>">
+					<div class="caption">
+					<h4>
+					<%= post.name %>	
+					</h4>
+					</div>
+					<p>
+						<a href="/posts/<%= post._id %>" class="btn btn-success">More info</a>
+					</p>
+				</div>
+			</div>
+		<% }); %>
+    </div>
+</div>
+
+
+	
+
+
+<% include partials/footer%>
